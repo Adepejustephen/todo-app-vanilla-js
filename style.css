@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: "Roboto";
+    background-color: #95b2b0;
+    color: #fff;
+}
+
+header {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #011627;
+    height: 40vh;
+    width: 100%;
+}
+
+
+
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form__input{
+    display: flex;
+}
+
+.todo__input, form button {
+    padding: .5rem;
+    font-size: 1.5rem;
+    background-color: #fefefe;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .9);
+}
+
+.todo__input{
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1); 
+    border-radius: 5px; 
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+}
+
+form button {
+    background-color: #fefefe;
+    color: #011627;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .9);
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+form button:hover {
+    color: #fefefe;
+    background-color: #011627;
+    
+}
+
+.todo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: -2rem;
+    min-height:0;
+    /* max-height: 50vh; */
+    box-shadow: 5px 5px 20px rgba(#011627, .9);
+    background-color: #faf2f2;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+.todo__list {
+    list-style: none;
+    width: 100%;
+}
+
+.todo {
+    color: #201d1d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-bottom: .3rem;
+    margin-top: .2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease;
+}
+
+.todo li {
+    flex: 1;
+    padding: 0rem 1rem 0 2rem;
+}
+
+.delete-btn, .complete-btn {
+    background-color: #e83151;
+    border: none;
+    font-size: 1.2rem;
+    color: #011627;
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 .2rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
+.delete-btn:hover, .complete-btn:hover {
+    background-color: #fefefe;
+    transition: .3s;
+    transform: rotate(360deg);
+}
+
+.complete-btn {
+    background-color: #26bd08;
+}
+
+.fa-check, .fa-trash {
+    pointer-events: none;
+}
+
+.delete{
+    transform: translateY(100px) rotateZ(20deg);
+    opacity: 0;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: #ff6747;
+    width: 160px;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select {
+     position: relative;
+     overflow: hidden;
+     margin: 1rem;
+     border-radius: 5px;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+     padding-right: 0;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background-color: #e83151;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.select:hover::after {
+    background-color: #fff;
+    color: #e83151;
+}
+
+@media screen and (max-width: 500px) {
+    form {
+        flex-direction: column;
+    }
+
+    .todo__input {
+        font-size: 1.2rem;
+    }
+
+    .todo__container {
+        max-width: 300px;
+    }
+}
